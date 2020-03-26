@@ -97,6 +97,8 @@ const restarFlecha = (num1, num2) => {
 function esMayorDeEdad(persona) {
   const nombre = persona.nombre;
   const edad = persona.edad;
+
+  // PSEUDOCÓDIGO:
   // if la persona tiene 18 o es mayor que 18
     // devuelve "es mayor de edad"
   // if es menor que 18
