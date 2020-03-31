@@ -109,17 +109,20 @@
     multiplicación de los dos números.
 */
 
-// const ordenSuperior = (num1, num2, operacion) => operacion(num1, num2);
+// const resultado = (num1, num2, operacion) => {
+//   if(typeof operacion !== 'function') throw new Error('Debes pasar funcion como argumento');
+//   return operacion(num1, num2);
+// }
 //
 // const suma = (num1, num2) => num1 + num2;
 // const resta = (num1, num2) => num1 - num2;
 // const multiplicacion = (num1, num2) => num1 * num2;
 // const division = (num1, num2) => num1 / num2;
 //
-// console.log(ordenSuperior(5, 3, suma)); //8
-// console.log(ordenSuperior(5, 3, resta)); //2
-// console.log(ordenSuperior(5, 3, multiplicacion)); //15
-// console.log(ordenSuperior(5, 3, division)); //1.6666
+// console.log(resultado(5, 3, suma)); //8
+// console.log(resultado(5, 3, resta)); //2
+// console.log(resultado(5, 3, multiplicacion)); //15
+// console.log(resultado(5, 3, division)); //1.6666
 
 
 /*
@@ -150,19 +153,19 @@
 const ordenSuperior = (tiempos, comparacion) => comparacion(tiempos);
 
 const mayorDe2Horas = (tiempos) => {
-  let arregloMayores2horas = [];
+  let arregloMayores2horasEnHrs = [];
   for (let i = 0; i < tiempos.length; i++) {
-    if(tiempos[i]>=120) arregloMayores2horas.push(tiempos[i]);
+    if(tiempos[i]>=120) arregloMayores2horasEnHrs.push(parseFloat(tiempos[i]/60).toFixed(2));
   }
-  return `Los tiempos mayores a 2 horas son: ${arregloMayores2horas}`;
+  return `Los tiempos mayores a 2 horas son: ${arregloMayores2horasEnHrs}`;
 }
 
 const menorDe2Horas = (tiempos) => {
-  let arregloMenores2horas = [];
+  let arregloMenores2horasEnHrs = [];
   for (let i = 0; i < tiempos.length; i++) {
-    if(tiempos[i]<120) arregloMenores2horas.push(tiempos[i]);
+    if(tiempos[i]<120) arregloMenores2horasEnHrs.push(parseFloat(tiempos[i]/60).toFixed(2));
   }
-  return `Los tiempos menores a 2 horas son: ${arregloMenores2horas}`;
+  return `Los tiempos menores a 2 horas son: ${arregloMenores2horasEnHrs}`;
 }
 
 const arreglo = [120, 80, 200, 100];
@@ -172,3 +175,54 @@ console.log(ordenSuperior(arreglo, menorDe2Horas)); // [80, 100]
 const otroArreglo = [300, 120, 100, 50, 10, 150];
 console.log(ordenSuperior(otroArreglo, mayorDe2Horas)); // [300, 120, 150]
 console.log(ordenSuperior(otroArreglo, menorDe2Horas)); // [100, 50, 10]
+
+
+// RESPUESTA MAUI:
+
+const timesInMinutes = [120, 80, 200, 100];
+
+// const greaterThanTwoHours = (arrayOfTimes, callback) => {
+  // const timesInHours = [];
+
+  // Llenamos el arreglo transformando a horas
+  // for (let i=0; i<arrayOfTimes.length; i++) {
+  //   timesInHours.push( arrayOfTimes[i]/60 );
+  // }
+//   // Mostramos los valores mayores a dos horas
+//   for (let i=0; i<timesInHours.length; i++) {
+//     if (timesInHours[i] > 2) console.log(timesInHours[i], "es mayor a dos horas!");
+//   }
+// }
+
+// const greaterThanTwoHours = (arrayOfTimes, callback) => {
+//   const timesInHours = arrayOfTimes.map(time => time/60);
+//   return callback(timesInHours);
+// }
+//
+// const callback = (arrayTimesInHours) => {
+//     // "a" representa cada elemento del arreglo al ser iterado
+//     // arrayTimesInHours.forEach( (a) => {console.log(a)} )
+//     arrayTimesInHours.forEach(time => time > 2
+//       ? console.log('tiempo: ', time)
+//       : undefined);
+// }
+
+// callback(timesInMinutes);
+
+// greaterThanTwoHours(timesInMinutes, callback);
+
+// const arreglo = ["Maria", "José", "Juan"];
+
+// arreglo.map((elemento, i) => console.log(elemento, i));
+
+
+// OPERADORES TERNARIOS:
+//
+// if (condition) {
+//   console.log(object);
+//   console.log(object);
+// } else console.log(object);
+//
+// return condition
+//   ? console.log("verdadero!")
+//   : console.log("falso...");
