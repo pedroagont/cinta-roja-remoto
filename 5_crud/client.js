@@ -29,10 +29,10 @@
 //     if(res.statusCode === 200){
 //       console.log(JSON.parse(body));
 //     } else console.log(res.statusCode, err);
-//   })
+//   });
 // }
 //
-// // readAllAuthors()
+// // readAllAuthors();
 //
 //
 // // Para leer un solo autor
@@ -42,10 +42,10 @@
 //     if(res.statusCode === 200){
 //       console.log(JSON.parse(body));
 //     } else console.log(res.statusCode, err);
-//   })
+//   });
 // }
 //
-// // readOneAuthor(6234)
+// // readOneAuthor(6234);
 //
 //
 //  // Update - PUT/PATCH
@@ -81,7 +81,7 @@
 //   });
 // }
 //
-// deleteAuthor(6134)
+// deleteAuthor(6134);
 
 // EJERCICIO
 // Ejecutar las siguientes funciones:
@@ -111,9 +111,9 @@ const readOneAuthor = (id) => {
    console.log('Obteniendo autor...');
    if(res.statusCode === 200){
      console.log(JSON.parse(body));
-     deleteAuthor(JSON.parse(body).id)
+     deleteAuthor(JSON.parse(body).id);
    } else console.log(res.statusCode, err);
- })
+ });
 }
 
 // Update - PUT/PATCH
@@ -155,7 +155,8 @@ const createAuthor = (name, last_name, nacionalidad, biography, gender, age) => 
     if(res.statusCode === 201){
       console.log(JSON.parse(body));
       updateAuthor(JSON.parse(body).id, "Pedrito", "Pedrini", "USA", "Chavito good", "M", 10);
-    } else console.log(res.statusCode, err);  })
+    } else console.log(res.statusCode, err);
+  });
 }
 
 createAuthor('Pedro', 'González', 'MX', 'Chavito bien', 'M', 26);
