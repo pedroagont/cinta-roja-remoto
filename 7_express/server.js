@@ -19,13 +19,22 @@ app.get('/ejemplo', (req, res) => {
   return res.send(req.query);
 });
 //INSOMNIA GET localhost:3000/ejemplo?precio=5000-12000&marca=Tohiba&fecha=2020-04-06
+// {
+//   "precio": "5000-12000",
+//   "marca": "Tohiba",
+//   "fecha": "2020-04-06"
+// }
 
 // ¿Cómo trabajamos con params?
 app.put('/authors/:name/:age', (req, res) => {
   console.log(req.params);
   return res.status(200).send(req.params);
 });
-//INSOMNIA PUT localhost:3000/authors/1234/26
+//INSOMNIA PUT localhost:3000/authors/Pedro/26
+// {
+//   "name": "Pedro",
+//   "age": "26"
+// }
 
 // ¿Cómo trabajamos con el body?
 app.post('/profile', (req, res) => {
