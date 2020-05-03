@@ -19,14 +19,17 @@ function App() {
 
   return (
     <React.Fragment>
-      <h1>Hola Mundo!</h1>
-      <p>{`Soy ${nombre} ${apellido}`}</p>
-      <div>
-        {mostrarNombre()}
-        {mostrarLorem()}
+      <div className="container mt-4">
+
+        <h1>Hola Mundo!</h1>
+        <p>{`Soy ${nombre} ${apellido}`}</p>
+        <div>
+          {mostrarNombre()}
+          {mostrarLorem()}
+        </div>
+        <HolaMundo />
       </div>
-      <HolaMundo />
-    </React.Fragment>
+      </React.Fragment>
   );
 }
 
